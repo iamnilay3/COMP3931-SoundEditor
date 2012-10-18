@@ -1,0 +1,39 @@
+﻿<Window x:Class="SoundEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top" Height="20">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="MenuItem_New"></MenuItem>
+                <MenuItem IsEnabled="False" Header="Open"></MenuItem>
+                <MenuItem Header="Exit" Click="MenuItem_Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Name="record_MI" Header="Record" Click="MenuItem_Record"></MenuItem>
+                <MenuItem Name="stop_MI" IsEnabled="False" Header="Stop" Click="MenuItem_StopRecord"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Border Name="WaveBorder" Width="760" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" BorderThickness="2" BorderBrush="LightSlateGray" Background="WhiteSmoke">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                <Canvas Name="WaveCanvas" Width="756" Height="246">
+                    <TextBlock Name="yLabel" Canvas.Top="90" Canvas.Left="10">0</TextBlock>
+                    <Line Name="middleLine" X1="35" X2="740" Y1="100" Y2="100" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Orange" StrokeThickness="2"/>
+                </Canvas>
+            </ScrollViewer>
+
+        </Border>
+        <Border Name="FrequencyBorder" Width="350" Height="250" HorizontalAlignment="Left" VerticalAlignment="top" Margin="10,300,0,0" BorderThickness="2" BorderBrush="LightSlateGray" Background="WhiteSmoke">
+            <Grid Name="FrequencyCanvas" Width="346" Height="246"></Grid>
+        </Border>
+        <Button Name="record_BTN" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,300,0,0" Height="auto" Width="50" BorderBrush="Black" BorderThickness="1" Click="MenuItem_Record">
+            Record
+        </Button>
+        <Button Name="stop_BTN" IsEnabled="false" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,330,0,0" Height="auto" Width="50" BorderBrush="Black" BorderThickness="1" Click="MenuItem_StopRecord">
+            Stop
+        </Button>
+        <Button Name="play_BTN" IsEnabled="false" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,360,0,0" Height="auto" Width="50" BorderBrush="Black" BorderThickness="1" Click="MenuItem_PlayRecord">
+            Play
+        </Button>
+    </Grid>
+</Window>
